@@ -86,7 +86,7 @@
   }
 
   .layout {
-    background: rgba(196, 196, 196, 0.72);;
+    background: rgba(196, 196, 196, 0.72);
     margin: 40px auto;
     max-width: 600px;
     overflow: scroll;
@@ -103,14 +103,16 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     border-radius: 8px;
-    margin: 10px;
     overflow: auto;
+    padding: 10px;
   }
 
   .travels {
     display: flex;
     flex-direction: column;
     margin: auto;
+    max-width: 600px;
+    overflow: scroll;
   }
 
   .travel {
@@ -127,7 +129,7 @@
   }
 
   .travel_account {
-    min-width: 260px;
+    width: 250px;
     overflow-wrap: break-word;
     border-radius: 8px;
     padding: 5px;

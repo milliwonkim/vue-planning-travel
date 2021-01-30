@@ -79,11 +79,37 @@
     box-shadow: 2px 2px 10px 1px;
   }
 
+  @media (max-width: 620px) {
+    .input_layout {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input_column_1 {
+      width: 93%;
+      margin: 0 auto;
+      height: 36px;
+    }
+
+    .input_column_2 {
+
+      width: 93%;
+      margin: 0 auto;
+      margin-top: 10px;
+
+    }
+
+    .input_column_3 {
+      width: 93%;
+      margin: 0 auto;
+    }
+  }
+
   .input_column_1 {
     display: flex;
     flex-direction: column;
     min-width: 170px;
-    min-height: 90px;
+    height: 90px;
     float: right;
     margin-right: 10px;
   }
