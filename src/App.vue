@@ -45,7 +45,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: rgba(196, 196, 196, 0.72);
+    background-color: rgba(82, 82, 82, 0.72);
     min-height: 50px;
     align-items: center;
     border-radius: 8px;

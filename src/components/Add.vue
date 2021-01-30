@@ -60,7 +60,10 @@
   }
 
   button {
-    display: none;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 200px;
+    border: transparent;
   }
 
   .input_layout {
@@ -112,7 +115,7 @@
 
     .input_column_1 {
       /* width: 93%; */
-      min-width: 250px;
+      min-width: 380px;
       margin: 0 auto;
       float: none;
       height: 36px;
@@ -121,7 +124,7 @@
 
     .input_column_2 {
       /* width: 93%; */
-      min-width: 250px;
+      max-width: 380px;
       margin: 0 auto;
       margin-bottom: 10px;
 
@@ -129,7 +132,7 @@
 
     .input_column_3 {
       /* width: 93%; */
-      min-width: 250px;
+      max-width: 380px;
       margin: 0 auto;
     }
   }
