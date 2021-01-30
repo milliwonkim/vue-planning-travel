@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vue-planning-travel/precache-manifest.00bdaa7139d4c5e0fd0262dc31833d59.js"
+  "/vue-planning-travel/precache-manifest.0812e4be258fcbba74b38630c4047091.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "table"});

@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c53fd3840102c2678ab1",
-    "url": "/vue-planning-travel/css/app.4df49679.css"
+    "revision": "25a58b1aa6afe340601c",
+    "url": "/vue-planning-travel/css/app.9e378aed.css"
   },
   {
-    "revision": "c66e1b152babb3a8eec810a14b77918e",
+    "revision": "70ad22ba1fd0a9c9dab3b46fd3794b91",
     "url": "/vue-planning-travel/index.html"
   },
   {
-    "revision": "c53fd3840102c2678ab1",
-    "url": "/vue-planning-travel/js/app.8acf12f1.js"
+    "revision": "25a58b1aa6afe340601c",
+    "url": "/vue-planning-travel/js/app.b38d3140.js"
   },
   {
     "revision": "877f7f8a935e263e06c6",
