@@ -69,7 +69,7 @@
     grid-template-columns: 1fr 2fr;
     border: 1px solid black;
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto;
     border-radius: 8px;
     padding: 10px 0;
     overflow: scroll;
@@ -79,37 +79,11 @@
     box-shadow: 2px 2px 10px 1px;
   }
 
-  @media (max-width: 620px) {
-    .input_layout {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .input_column_1 {
-      width: 93%;
-      margin: 0 auto;
-      height: 36px;
-    }
-
-    .input_column_2 {
-
-      width: 93%;
-      margin: 0 auto;
-      margin-top: 10px;
-
-    }
-
-    .input_column_3 {
-      width: 93%;
-      margin: 0 auto;
-    }
-  }
-
   .input_column_1 {
     display: flex;
     flex-direction: column;
     min-width: 170px;
-    height: 90px;
+    height: 91px;
     float: right;
     margin-right: 10px;
   }
@@ -117,8 +91,8 @@
   .input_column_2 {
     display: flex;
     flex-direction: column;
-    min-width: 380px;
     min-height: 36px;
+    min-width: 380px;
     margin-bottom: 10px;
   }
 
@@ -128,6 +102,36 @@
     min-width: 380px;
     min-height: 36px;
     margin-top: 10px;
+  }
+
+  @media (max-width: 620px) {
+    .input_layout {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input_column_1 {
+      /* width: 93%; */
+      min-width: 250px;
+      margin: 0 auto;
+      float: none;
+      height: 36px;
+      margin-bottom: 10px;
+    }
+
+    .input_column_2 {
+      /* width: 93%; */
+      min-width: 250px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+
+    }
+
+    .input_column_3 {
+      /* width: 93%; */
+      min-width: 250px;
+      margin: 0 auto;
+    }
   }
 
 </style>

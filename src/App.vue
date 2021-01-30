@@ -23,7 +23,7 @@
   }
 
   #app {
-    height: 100vh;
+    height: 110vh;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,6 +33,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
+  }
+
+  @media (max-width: 620px) {
+    #app {
+      height: 123vh;
+    }
   }
 
   .nav {

@@ -5,7 +5,7 @@
       <div v-for="day in days" :key="day">
         <div class="day">
           <div class="individual_day">
-            <p>{{day}}일차</p>
+            <div>{{day}}일차</div>
           </div>
           <div class="travels">
             <div v-for="travel in travels" v-bind:key="travel.id">
@@ -110,14 +110,12 @@
   .travels {
     display: flex;
     flex-direction: column;
-    margin: auto;
     max-width: 600px;
     overflow: scroll;
   }
-
   .travel {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 1fr;
     margin: 5px 0;
   }
 
@@ -126,19 +124,20 @@
     border-radius: 8px;
     max-width: 180px;
     background-color: white;
+    margin-right: 10px;
   }
 
   .travel_account {
-    width: 250px;
+    max-width: 300px;
     overflow-wrap: break-word;
     border-radius: 8px;
     padding: 5px;
+    margin-right: 10px;
     background-color: white;
   }
 
   .travel_price {
-    max-width: 100px;
-    margin-left: 15px;
+    min-width: 50px;
     overflow-wrap: break-word;
     padding: 5px;
     border-radius: 8px;
