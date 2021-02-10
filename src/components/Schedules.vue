@@ -39,7 +39,7 @@
           id: 0,
           day: 0
         },
-        isShow: false,
+        isShow: true,
         total: 0,
         days: new Set([1]),
         travels: [{
