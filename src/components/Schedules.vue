@@ -1,5 +1,6 @@
 <template>
   <div class="entire">
+    <Modal v-if="isShow" :edit="edit" @handleEdit="handleEdit" @handleModalClose="handleModalClose" />
     <Add :travels="travels" :days="days" @calculate="calculate" />
     <div class="layout">
       <div v-for="day in days" :key="day">
@@ -10,8 +11,9 @@
           <div class="travels">
             <div v-for="travel in travels" v-bind:key="travel.id">
               <div class="travel" v-if='day === travel.day'>
-                <div class="travel_account">{{travel.account}}</div>
-                <div class="travel_price">{{travel.price}}</div>
+                <div @dblclick="handleModalOpen(travel.id)" class="travel_account">{{travel.account}}</div>
+                <div @dblclick="handleModalOpen(travel.id)" class="travel_price">{{travel.price}}</div>
+                <div @click="handleDelete(travel.id)" class="travel_delete">Delete</div>
               </div>
             </div>
           </div>
@@ -26,10 +28,18 @@
 
 <script>
   import Add from '@/components/Add.vue'
+  import Modal from '@/components/Modal.vue'
 
   export default {
     data: function () {
       return {
+        edit: {
+          account: '',
+          price: 0,
+          id: 0,
+          day: 0
+        },
+        isShow: false,
         total: 0,
         days: new Set([1]),
         travels: [{
@@ -51,19 +61,51 @@
       msg: String
     },
     components: {
-      Add
+      Add,
+      Modal
     },
     created() {
       this.total = this.travels.reduce((acc, val) => acc + val.price, 0)
     },
     beforeUpdate() {
       this.sortTravel()
-      console.log('beforeUpdate')
     },
     methods: {
+      handleModalOpen(id) {
+        console.log('doubleClicked')
+        console.log(id, 'id of handleModalOpen')
+        this.travels.map(travel => {
+          if (travel.id === id) {
+            this.edit = {
+              account: travel.account,
+              price: travel.price,
+              id: travel.id,
+              day: travel.day
+            }
+            console.log(this.edit, 'this.edit')
+          }
+        })
+        this.isShow = true;
+      },
+      handleModalClose() {
+        console.log('handleClose')
+        this.isShow = false;
+      },
+      handleEdit(edit) {
+        this.travels.map(travel => {
+          if (travel.id === Number(edit.id)) {
+            travel.account = edit.account;
+            travel.price = edit.price;
+            console.log(travel, 'travel of handleEdit')
+          }
+        })
+        console.log(this.travels, '**** travels ****')
+      },
       calculate() {
-        console.log('calculate')
         this.total = this.travels.reduce((acc, val) => acc + val.price, 0)
+      },
+      handleDelete(id) {
+        this.travels = this.travels.filter(travel => travel.id !== id)
       },
       sortTravel() {
         this.days = new Set([...this.days].sort((a, b) => {
@@ -73,16 +115,20 @@
           return a.day - b.day
         })
       }
-    }
+    },
   };
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
   h1 {
     color: white;
+  }
+
+  .entire {
+    position: relative;
+    z-index: 1;
   }
 
   .layout {
@@ -113,13 +159,17 @@
     max-width: 600px;
     overflow: scroll;
   }
+
   .travel {
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr;
     margin: 5px 0;
   }
 
   .individual_day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 8px;
     max-width: 180px;
@@ -137,6 +187,16 @@
   }
 
   .travel_price {
+    min-width: 50px;
+    overflow-wrap: break-word;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  .travel_delete {
+    cursor: pointer;
+    margin-left: 10px;
     min-width: 50px;
     overflow-wrap: break-word;
     padding: 5px;
