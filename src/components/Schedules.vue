@@ -39,7 +39,7 @@
           id: 0,
           day: 0
         },
-        isShow: true,
+        isShow: false,
         total: 0,
         days: new Set([1]),
         travels: [{
@@ -63,9 +63,6 @@
     components: {
       Add,
       Modal
-    },
-    created() {
-      this.total = this.travels.reduce((acc, val) => acc + val.price, 0)
     },
     beforeUpdate() {
       this.sortTravel()
@@ -95,7 +92,7 @@
         this.travels.map(travel => {
           if (travel.id === Number(edit.id)) {
             travel.account = edit.account;
-            travel.price = edit.price;
+            travel.price = Number(edit.price);
             console.log(travel, 'travel of handleEdit')
           }
         })
@@ -116,6 +113,12 @@
         })
       }
     },
+    created() {
+      this.total = this.travels.reduce((acc, val) => acc + val.price, 0)
+    },
+    updated() {
+      this.total = this.travels.reduce((acc, val) => acc + val.price, 0)
+    }
   };
 
 </script>

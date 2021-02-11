@@ -58,7 +58,7 @@
     z-index: 998;
     border: transparent;
     width: 100vw;
-    height: 108vh;
+    height: 105.5vh;
     background-color: rgba(52, 73, 94, 0.6);
   }
 
